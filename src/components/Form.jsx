@@ -10,7 +10,11 @@ const Form = (props) => {
 
     let handelSubmit = (event) => {
         event.preventDefault();
-        console.log(inputTodoItem)
+        
+        if( inputTodoItem.trim() === '' ){
+            return;
+        }
+        
         props.addTodo(inputTodoItem);
         setInputTodoItem("");
     }
@@ -29,4 +33,4 @@ const Form = (props) => {
 
 };
 
-export default Form;
+export default Form
